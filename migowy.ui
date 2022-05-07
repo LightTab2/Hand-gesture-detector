@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MigowyClass</class>
+ <widget class="QMainWindow" name="MigowyClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>810</width>
+    <height>669</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Migowy</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>701</width>
+      <height>485</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="Menu">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetFixedSize</enum>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="drawSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="Options">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="Options1">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="downsize">
+           <item>
+            <widget class="OptionCheck" name="downsizeCheck">
+             <property name="text">
+              <string>Downsize</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="downsizeScaleText">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Scale: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="downsizeScaleSlider">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="gauss">
+           <item>
+            <widget class="Line" name="gaussSeparator">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="gaussCheck">
+             <property name="text">
+              <string>Gauss</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="gaussKernelText">
+             <property name="text">
+              <string>Kernel: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="gaussKernelSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="gaussSigmaText">
+             <property name="text">
+              <string>Sigma: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="gaussSigmaSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="equalize">
+           <item>
+            <widget class="Line" name="eqSeparator">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="eqCheck">
+             <property name="text">
+              <string>Equalize</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="eqSCheck">
+             <property name="text">
+              <string>Equalize S</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="eqVClaheThresholdText">
+             <property name="text">
+              <string>L CLAHE threshold:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="eqVClaheThresholdSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="eqVClaheKernelText">
+             <property name="text">
+              <string>L CLAHE kernel: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="eqVClaheKernelSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="simplify">
+           <item>
+            <widget class="Line" name="simplifySeparator">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="simplifyHeaderText">
+             <property name="text">
+              <string>Simplify</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="simplifyText">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Epsilon: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="simplifySlider">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="cutoffText">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Cutoff: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="cutoffSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="Options1to2Separator">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="Options2">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="skin">
+           <item>
+            <widget class="Line" name="skinSeparator">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="skinCheck">
+             <property name="text">
+              <string>Skin</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="skinHThresholdLowText">
+             <property name="text">
+              <string>H threshold low: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="skinHThresholdLowSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="skinHThresholdHighText">
+             <property name="text">
+              <string>H threshold high: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="skinHThresholdHighSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="skinHInvertCheck">
+             <property name="text">
+              <string>Invert</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="skinSThresholdLowText">
+             <property name="text">
+              <string>S threshold low: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="skinSThresholdLowSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="skinSThresholdHighText">
+             <property name="text">
+              <string>S threshold high: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="skinSThresholdHighSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="skinVThresholdLowText">
+             <property name="text">
+              <string>V threshold low: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="skinVThresholdLowSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="skinVThresholdHighText">
+             <property name="text">
+              <string>V threshold high: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="skinVThresholdHighSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="Options2to3Separator">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="Options3">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="approx">
+           <item>
+            <widget class="OptionCheck" name="approxCheck">
+             <property name="text">
+              <string>Approx</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="approxSphereCheck">
+             <property name="text">
+              <string>Sphere</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="approxKernelText">
+             <property name="text">
+              <string>Kernel:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="approxKernelSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="approxHThresholdLowText">
+             <property name="text">
+              <string>H threshold low: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="approxHThresholdLowSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="approxHThresholdHighText">
+             <property name="text">
+              <string>H threshold high: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="approxHThresholdHighSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="approxSThresholdLowText">
+             <property name="text">
+              <string>S threshold low: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="approxSThresholdLowSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="approxSThresholdHighText">
+             <property name="text">
+              <string>S threshold high: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="approxSThresholdHighSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="approxVThresholdLowText">
+             <property name="text">
+              <string>V threshold low: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="approxVThresholdLowSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="approxVThresholdHighText">
+             <property name="text">
+              <string>V threshold high: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="approxVThresholdHighSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="Options3to4Separator">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="Options4">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="whiteBalance">
+           <item>
+            <widget class="OptionCheck" name="whiteBalanceCheck">
+             <property name="text">
+              <string>White balance</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="whiteBalanceRedText">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Red: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="whiteBalanceRedSlider">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="whiteBalanceGreenText">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Green:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="whiteBalanceGreenSlider">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="whiteBalanceBlueText">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Blue:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="whiteBalanceBlueSlider">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="dilate">
+           <item>
+            <widget class="Line" name="dilateSeparator">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="dilateCheck">
+             <property name="text">
+              <string>Dilate</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="dilateSphereCheck">
+             <property name="text">
+              <string>Sphere</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="dilateKernelText">
+             <property name="text">
+              <string>Kernel:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="dilateKernelSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="close">
+           <item>
+            <widget class="Line" name="closeSeparator">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="closeCheck">
+             <property name="text">
+              <string>Close</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionCheck" name="closeSphereCheck">
+             <property name="text">
+              <string>Sphere</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="closeKernelText">
+             <property name="text">
+              <string>Kernel:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="closeKernelSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionLabel" name="closeIterationsText">
+             <property name="text">
+              <string>Iterations:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="OptionSlider" name="closeIterationsSlider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="Options4toListSeparator">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="List">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QListWidget" name="listWidget">
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="dragDropMode">
+            <enum>QAbstractItemView::InternalMove</enum>
+           </property>
+           <property name="defaultDropAction">
+            <enum>Qt::MoveAction</enum>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::ExtendedSelection</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Original</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>White balance</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Downsize</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Gauss</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Equalize</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Skin</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>H</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>S</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>V</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Grey</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dilate</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Close</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Contours</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sign</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="camDefaultButton">
+           <property name="text">
+            <string>Calibrate</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="saveImageButton">
+           <property name="text">
+            <string>Save Image</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="saveOptionsButton">
+           <property name="text">
+            <string>Save Options</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>810</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>OptionLabel</class>
+   <extends>QLabel</extends>
+   <header>optionLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>OptionSlider</class>
+   <extends>QSlider</extends>
+   <header>OptionSlider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>OptionCheck</class>
+   <extends>QCheckBox</extends>
+   <header>optioncheck.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="migowy.qrc"/>
+ </resources>
+ <connections/>
+</ui>
